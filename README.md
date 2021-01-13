@@ -20,6 +20,10 @@ These steps will be followed for each of the models created.
 Before I begin with the modeling, though, I'd like to first discover what the most important features of the dataset are. This way, less resources will be invested in features that don't really contribute to the model.
 To do this, I ran both a Decision Tree and a Random Forest.
 
+Their respective scores were:
+* Decision Tree: .864
+* Random Forest: .911
+
 From them, I determined that the features of most importance were:
 * "koi_fpflag_co"
 * "koi_fpflag_nt"
@@ -32,3 +36,13 @@ From them, I determined that the features of most importance were:
 With this out of the way, we can now begin.
 
 ## Model Performance
+
+###SVC
+![svc](Images/SVC.png)
+We can see that the model has an accuracy of .76 and, because of the scaling, it found no way to learn how to predict if a finding is a Candidate or not. Therefore, this model doesn't really work for us.
+
+
+###KNN
+![knn](Images/KNN.png)
+The model ended up having an accuracy of .89, immeadiately better than the SVC model. Candidate findings are correctly predicted 84% of the times, so I'd say that between both models that were tested, this one is the way to go.
+
